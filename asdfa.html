@@ -3,37 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="landing.css">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
     <title>Landing Page</title>
 </head>
 <body>
-    <div id="bg">
-        <canvas></canvas>
-        <canvas></canvas>
-        <canvas></canvas>
-    </div>
-    <div class="main-cont">
+    <div class="main-cont"> 
         <div class="left-cont" id="left-cont">
             <div class="logo">
-                <img src="wmsulogo.png" alt="">
+                <div class="hexagon"></div>
             </div>
             <div class="log-reg">
                 <button id="login">LOGIN</button>
                 <button id="register">REGISTER</button>
             </div>
         </div>
-
-        <div class="blank-cont" id="blankCont">
-
-        </div>
-
-        <div class="right-cont" id="right-cont">
-            <div class="close-btn" id="close-btn">
-                <i class="fa-solid fa-angles-right"></i>
-            </div>
+        <div class="right-cont" id="right-cont"> 
             <div class="login-cont" id="login-cont">
+                <div class="close-btn" id="close-btn">
+                    <i class="fa-solid fa-angles-right"></i>
+                </div>
                 <h1>Sign in to your Account</h1>
                 <form action="">
                     <div class="fill-up">
@@ -74,32 +63,13 @@
                         </div>
                         <input type="text" placeholder="Password">
                     </div>
-                    <button>CREATE ACCOUNT</button>
+                    <button>LOGIN</button>
                 </form>
-                <a id="btn-login" href="">ALREADY HAVE AN ACCOUNT?</a>
+                <a id="btn-create" href="">CREATE ACCOUNT</a>
             </div>
+           
         </div>
     </div>
-
-    <div class="about-us">
-        <h1>hi</h1>
-    </div>
-
-    <script src="background.js"></script>
-    <script>
-        function loadScript(src) {
-            const script = document.createElement('script');
-            script.src = src;
-            script.async = true;
-            document.head.appendChild(script);
-        }
-    
-        if (window.innerWidth >= 769) {
-            loadScript('landing.js'); // Script for mobile screens
-        } else if (window.innerWidth <= 768) {
-            loadScript('landingPhone.js'); // Script for tablets
-        }
-    </script>
-
-<body>
+    <script src="index.js"></script>
+</body>
 </html>

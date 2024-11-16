@@ -13,7 +13,124 @@
     margin: 0;
 }
 
-/* BG */
+::-webkit-scrollbar {
+    width: 13px; 
+    height: 13px;
+    background: #b22222b4;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: white;
+    border-radius: 6px;
+    border: 2px solid transparent;
+    background-clip: padding-box; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #b22222; 
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 6px;
+
+}
+
+.notif{
+    position: fixed;
+    display: none;
+    height: 100px;
+    width: 350px;
+    background-color: white;
+    bottom: 1em;
+    right: 1em;
+    border-radius: 10px;
+    z-index: 10;
+    transform: translateX(100%); 
+    opacity: 0; 
+    animation: none; 
+}
+
+@keyframes showNotif {
+    0% {
+        transform: translateX(100%); 
+        opacity: 0; 
+    }
+    100% {
+        transform: translateX(0); 
+        opacity: 1; 
+    }
+}
+
+@keyframes closeNotif {
+    0% {
+        transform: translateX(0); 
+        opacity: 1; 
+    }
+    100% {
+        transform: translateX(100%); 
+        opacity: 0; 
+    }
+}
+
+.notif .color{
+    width: 20PX;
+    background-color: red;
+    border-radius: 10px 0 0 10px;
+}
+
+.notif i{
+    display: flex;
+    align-items: center;
+    font-size: 2.5em;
+    color: red;
+    margin: 0.5em;
+}
+
+.notif .message{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    text-align: start;
+    justify-content: center;
+    gap: 0.2em;
+    width: 100%;
+
+}
+
+.notif .message h1{
+    text-align: start;
+    font-size: 1.5rem;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.notif .message p{
+    font-size: 1rem;
+    font-family:'Times New Roman', Times, serif;
+    color: rgb(90, 90, 90);
+}
+
+.notif .close-icon{
+    height: 50px;
+    width: 50px;
+    top: 0;
+    right: 0;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.notif .close-icon i{
+    font-size: 1.5em;
+    color: rgb(90, 90, 90);
+}
+
+.close-icon i:hover{
+    color: red;
+    cursor: pointer;
+}
+
+
 
 body{
     overflow-x: hidden;
@@ -44,6 +161,8 @@ body{
     flex-direction: row;
     overflow: hidden;
 }
+
+
 
 
 .main-cont .left-cont{
@@ -305,11 +424,13 @@ body{
     width: 100%;
     border-radius: 20px 0 0 20px;
     justify-content: space-around;
-}
+    border: 4px solid white;
+    box-shadow: inset 0 0 0 5px #b22222;}
 
-.main-cont  .right-cont .create-cont a{
+.main-cont  .right-cont a{
     text-decoration: none;
     color: firebrick;
+    cursor: pointer;
 }
 
 .main-cont  .right-cont .create-cont form{
@@ -371,6 +492,78 @@ body{
 .about-us{
     background-color: #b22222b4;
 
+}
+
+.main-cont .right-cont .verification-cont{
+    display: none;
+    flex-direction: column;
+    background-color: var(--first-color-light);
+    align-items: center;
+    height: 90%;
+    width: 100%;
+    border-radius: 20px 0 0 20px;
+    justify-content: space-around;
+    border: 4px solid white;
+    box-shadow: inset 0 0 0 5px #b22222;
+}
+
+.main-cont  .right-cont .verification-cont a{
+    text-decoration: none;
+    color: firebrick;
+}
+
+.main-cont  .right-cont .verification-cont form{
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.5em;
+    align-items: center;
+    width: 50%;
+    
+}
+
+.main-cont  .right-cont .verification-cont button{
+    height: 4em;
+    width: 300px;   
+    border-radius: 50px;
+    background-color: white;
+    color: var(--first-color);
+    cursor: pointer;
+    font-family: "Black Ops One", system-ui;
+    border: none;
+}
+
+.main-cont  .right-cont .verification-cont button:hover{
+    border: 3px solid var(--first-color);
+}
+
+.main-cont  .right-cont .verification-cont form .fill-up{
+    height: 50px;
+    width: 300px;
+    background-color: white;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.main-cont  .right-cont .verification-cont form .fill-up .icons{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: var(--first-color) 2px solid;
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    color: var(--first-color);
+}
+
+
+.main-cont  .right-cont .verification-cont form .fill-up input{
+    width: 80%;
+    border: none;
+    outline: none;
+    font-size: 1.2rem;
 }
 
 @media  (min-width: 1201px) {
@@ -442,6 +635,7 @@ body{
         flex-direction: row;
         overflow: hidden;
     }
+
     
     
     .main-cont .left-cont{
@@ -824,10 +1018,123 @@ body{
 
     }
 
+    @keyframes movelefts {
+        0% {
+            width: 0%;
+        }
+        100% {
+            width: 50%;
+        }
+    }
+    
+    @keyframes moverights {
+        0% {
+            width: 50%;
+    
+        }
+        100% {
+            width: 0;
+    
+        }
+    }
+    
+    
+    @keyframes moveleft {
+        0% {
+            width: 100%;
+        }
+        100% {
+            width: 50%;
+        }
+    }
+    
+    @keyframes moveright {
+        0% {
+            width: 50%;
+    
+        }
+        100% {
+            width: 100%;
+    
+        }
+    }
+
+    
+
 
 }
 
 @media only screen and (max-width: 768px) {
+
+    .notif{
+        position: fixed;
+        display: none;
+        height: 80px;
+        width: 300px;
+        background-color: white;
+        bottom: 1em;
+        right: 1em;
+        border-radius: 10px;
+        z-index: 10;
+        transform: translateX(100%); 
+        opacity: 0; 
+        animation: none; 
+    }
+
+    .notif .color{
+        width: 15PX;
+        background-color: red;
+        border-radius: 10px 0 0 10px;
+    }
+    
+    .notif i{
+        display: flex;
+        align-items: center;
+        font-size: 2rem;
+        color: red;
+        margin: 0.5em;
+    }
+    
+    .notif .message{
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        text-align: start;
+        justify-content: center;
+        gap: 0.2em;
+        width: 100%;
+    
+    }
+    
+    .notif .message h1{
+        text-align: start;
+        font-size: 1.2rem;
+        font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    }
+    
+    .notif .message p{
+        font-size: 0.8rem;
+        font-family:'Times New Roman', Times, serif;
+        color: rgb(90, 90, 90);
+    }
+    
+    .notif .close-icon{
+        height: 40px;
+        width: 40px;
+        top: 0;
+        right: 0;
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .notif .close-icon i{
+        font-size: 1.2em;
+        color: rgb(90, 90, 90);
+    }
+ 
+    
 
     body{
         overflow-x: hidden;
@@ -899,11 +1206,35 @@ body{
         }
     }
 
+    @keyframes logo {
+        0% {
+            transform: translateY(0);
+        }
+        100% {
+            transform: translateY(130%); 
+        }
+       
+    }
+
+    @keyframes logos {
+        0% {
+            transform: translateY(100%); 
+        }
+        100% {
+            transform: translateY(0); 
+        }
+    }
+
     .right-cont{
         position: absolute;
         height: 100%;
         width: 100%;
         flex-direction: column;
+        margin-top: -3em;
+    }
+
+    .right-cont a{
+        font-size: 0.7rem;
     }
 
     .main-cont .right-cont .close-btn{
@@ -911,7 +1242,7 @@ body{
         height: 30px;
         width: 30px;
         font-size: 0.5rem;
-        top: 65em;
+        top: 56.5em;
         left: 0.2em;
     }
 
@@ -921,5 +1252,109 @@ body{
         border-radius: 0 0 20px 20px;
     }
 
+    .main-cont .right-cont h1 {
+        color: var(--first-color);
+        font-size: 1.2rem;
+    }
+
+    .main-cont  .right-cont .login-cont form .fill-up{
+        height: 30px;
+        width: 200px;
+        
+    }
+
+    .main-cont  .right-cont .login-cont form .fill-up input{
+        width: 70%;
+        font-size: 1rem;
+    }
+
+    .main-cont  .right-cont .login-cont form .fill-up .icons{
+        height: 20px;
+        width: 20px;
+    }
+
+    .main-cont  .right-cont .login-cont form .fill-up i{
+        font-size: 0.8rem;
+    }
+
+    .main-cont .right-cont .login-cont button {
+        height: 3em;
+        width: 200px;
+        
+    }
+
+    .main-cont .right-cont .create-cont{
+        height: 60%;
+        width: 70%;
+        border-radius: 0 0 20px 20px;
+    }
+
+    .main-cont .right-cont h1 {
+        color: var(--first-color);
+        font-size: 1.2rem;
+    }
+
+    .main-cont  .right-cont .create-cont form .fill-up{
+        height: 30px;
+        width: 200px;
+        
+    }
+
+    .main-cont  .right-cont .create-cont form .fill-up input{
+        width: 70%;
+        font-size: 1rem;
+    }
+
+    .main-cont  .right-cont .create-cont form .fill-up .icons{
+        height: 20px;
+        width: 20px;
+    }
+
+    .main-cont  .right-cont .create-cont form .fill-up i{
+        font-size: 0.8rem;
+    }
+
+    .main-cont .right-cont .create-cont button {
+        height: 3em;
+        width: 200px;
+        
+    }
+
+    .main-cont .right-cont .verification-cont{
+        height: 60%;
+        width: 70%;
+        border-radius: 0 0 20px 20px;
+    }
+
+
+    .main-cont  .right-cont .verification-cont form .fill-up{
+        height: 30px;
+        width: 200px;
+        
+    }
+
+    .main-cont  .right-cont .verification-cont form .fill-up input{
+        width: 70%;
+        font-size: 1rem;
+    }
+
+    .main-cont  .right-cont .verification-cont form .fill-up .icons{
+        height: 20px;
+        width: 20px;
+    }
+
+    .main-cont  .right-cont .verification-cont form .fill-up i{
+        font-size: 0.8rem;
+    }
+
+    .main-cont .right-cont .verification-cont button {
+        height: 3em;
+        width: 200px;
+        
+    }
+    
+
 }
+
+
 

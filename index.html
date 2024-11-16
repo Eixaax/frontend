@@ -3,43 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="landing.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Landing Page</title>
 </head>
 <body>
-    <div class="main-cont"> 
+    <div id="bg">
+        <canvas></canvas>
+        <canvas></canvas>
+        <canvas></canvas>
+    </div>
+    <div class="notif" id="notif">
+        <div class="color"></div>
+        <i class="fa-solid fa-circle-exclamation"></i>
+        <div class="message">
+            <h1 id="title">INVALID!</h1>
+            <p id="message">Please fill in all the required fields.</p>
+        </div>
+        <div class="close-icon" id="close-icon">
+            <i class="fa-solid fa-circle-xmark"></i>
+        </div>
+    </div>
+    <div class="main-cont">
         <div class="left-cont" id="left-cont">
-            <div class="logo">
-                <div class="hexagon"></div>
+            <div class="logo" id="logo">
+                <img src="wmsulogo.png" alt="">
             </div>
-            <div class="log-reg">
+            <div class="log-reg" id="log-reg">
                 <button id="login">LOGIN</button>
                 <button id="register">REGISTER</button>
             </div>
         </div>
-        <div class="right-cont" id="right-cont"> 
+
+        <div class="blank-cont" id="blankCont">
+
+        </div>
+
+        <div class="right-cont" id="right-cont">
+            <div class="close-btn" id="close-btn">
+                <i class="fa-solid fa-angles-right"></i>
+            </div>
             <div class="login-cont" id="login-cont">
-                <div class="close-btn" id="close-btn">
-                    <i class="fa-solid fa-angles-right"></i>
-                </div>
                 <h1>Sign in to your Account</h1>
                 <form action="">
                     <div class="fill-up">
                         <div class="icons">
                             <i class="fa-solid fa-user"></i>
                         </div>
-                        <input type="text" placeholder="Username">
+                        <input type="text" id="username" placeholder="Username">
                     </div>
                     <div class="fill-up">
                         <div class="icons">
                             <i class="fa-solid fa-lock"></i>
                         </div>
-                        <input type="text" placeholder="Password">
+                        <input type="text" id="password" placeholder="Password">
                     </div>
-                    <button>LOGIN</button>
+                    <button id="login-clicked" type="button">LOGIN</button>
                 </form>
-                <a href="">CREATE ACCOUNT</a>
+                <a id="btn-create">CREATE ACCOUNT</a>
             </div>
 
             <div class="create-cont" id="create-cont">
@@ -49,26 +71,60 @@
                         <div class="icons">
                             <i class="fa-solid fa-user"></i>
                         </div>
-                        <input type="text" placeholder="Username">
+                        <input type="text" id="cusername" placeholder="Username">
                     </div>
                     <div class="fill-up">
                         <div class="icons">
-                            <i class="fa-solid fa-user"></i>
+                            <i class="fa-solid fa-envelope"></i>
                         </div>
-                        <input type="email" placeholder="Email">
+                        <input type="email" id="cemail" placeholder="Email">
                     </div>
                     <div class="fill-up">
                         <div class="icons">
                             <i class="fa-solid fa-lock"></i>
                         </div>
-                        <input type="text" placeholder="Password">
+                        <input type="text" id="cpassword" placeholder="Password">
                     </div>
-                    <button>LOGIN</button>
+                    <button id="register-clicked"  type="button" >CREATE ACCOUNT</button>
                 </form>
-                <a id="btn-create" href="">CREATE ACCOUNT</a>
+                <a id="btn-login">ALREADY HAVE AN ACCOUNT?</a>
+            </div>
+            <div class="verification-cont" id="verification-cont">
+                <h1>VERIFICATION SENT!</h1>
+                <form action="">
+                    <div class="fill-up">
+                        <div class="icons">
+                            <i class="fa-solid fa-code"></i>
+                        </div>
+                        <input type="text" placeholder="VERIFICATION CODE">
+                    </div>
+                    <button>CONFIRM</button>
+                </form>
+                <a id="btn-back">Go back</a>
             </div>
         </div>
     </div>
-    <script src="index.js"></script>
-</body>
+
+    <!-- <div class="about-us">
+        <h1>hi</h1>
+    </div> -->
+
+    <script src="background.js"></script>
+    <script src="notif.js"></script>
+    <script>
+        function loadScript(src) {
+            const script = document.createElement('script');
+            script.src = src;
+            script.async = true;
+            document.head.appendChild(script);
+        }
+    
+        if (window.innerWidth >= 769) {
+            loadScript('landing.js'); 
+        } else if (window.innerWidth <= 768) {
+            loadScript('landingPhone.js'); 
+        }
+    </script>
+
+<body>
 </html>
