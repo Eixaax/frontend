@@ -7,13 +7,10 @@ const leftCont = document.getElementById('left-cont');
 const loginCont = document.getElementById('login-cont');
 const RegisterCont = document.getElementById('create-cont');
 
-
-
 create.addEventListener('click', createAcc);
 login.addEventListener('click', openL);
 register.addEventListener('click', openC);
 closes.addEventListener('click', close);
-
 
 function close(){
     leftCont.style.animation = 'moveright 0.5s ease';
@@ -25,7 +22,6 @@ function close(){
         RegisterCont.style.display = 'none';
     }, 500);
     
-
 }
 
 function openL(){
@@ -52,7 +48,6 @@ function openC(){
     RegisterCont.style.display = 'flex';
 
 }
-
 
 function createAcc(){
     close()

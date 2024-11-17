@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="dashboard.css">
+    <title>Dashboard</title>
+</head>
+<body>
+    <div class="dashboard">
+        <div class="sidebar" id="sidebar">
+            <div class="sidebar-header">Dashboard</div>
+            <div class="sidebar-menu">
+                <a href="#">Profile</a>
+                <a href="#">Settings</a>
+                <a href="#">Logout</a>
+            </div>
+        </div>
+        <div class="main-content">
+            <header class="header">
+                <button class="toggle-btn" id="toggleSidebar">☰</button>
+                <h1>Welcome, User</h1>
+                <div>
+                    <button class="toggle-btn">🔔</button>
+                    <button class="toggle-btn">👤</button>
+                </div>
+            </header>
+            <main class="content">
+                <div class="card-grid">
+                    <div class="card">
+                        <h2>Card 1</h2>
+                        <p>This is some sample content for the dashboard.</p>
+                    </div>
+                    <div class="card">
+                        <h2>Card 2</h2>
+                        <p>This is some sample content for the dashboard.</p>
+                    </div>
+                    <div class="card">
+                        <h2>Card 3</h2>
+                        <p>This is some sample content for the dashboard.</p>
+                    </div>
+                    <div class="card">
+                        <h2>Card 4</h2>
+                        <p>This is some sample content for the dashboard.</p>
+                    </div>
+                    <div class="card">
+                        <h2>Card 5</h2>
+                        <p>This is some sample content for the dashboard.</p>
+                    </div>
+                    <div class="card">
+                        <h2>Card 6</h2>
+                        <p>This is some sample content for the dashboard.</p>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script>
+        const sidebar = document.getElementById('sidebar');
+        const toggleBtn = document.getElementById('toggleSidebar');
+
+        toggleBtn.addEventListener('click', () => {
+            sidebar.classList.toggle('closed');
+        });
+    </script>
+</body>
+</html>
