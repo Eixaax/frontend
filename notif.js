@@ -4,7 +4,6 @@ const verify = document.getElementById('verification-cont')
 
 const notifCont = document.getElementById('notif');
 const closeNotif = document.getElementById('close-icon');
-
 const passwordInput = document.getElementById('password');
 const usernameInput = document.getElementById('username');
 
@@ -20,7 +19,7 @@ loginButton.addEventListener('click', () => {
     if (!usernameInput.value.trim() || !passwordInput.value.trim()) {
         errorNotif("Please fill in all the required fields.");
     } else {
-        console.log('Inputs are valid!');
+        window.location.href = 'registration.html'; 
     }
 });
 
@@ -32,7 +31,6 @@ registerButton.addEventListener('click', () => {
     } else {
         RegisterCont.style.display = 'none';
         verify.style.display = 'flex';
-
     }
 });
 
@@ -45,7 +43,6 @@ function errorNotif(message) {
         closeIcon(); 
     }, 3000); 
 }
-
 
 function closeIcon(){
     notifCont.style.animation = 'closeNotif 0.5s ease forwards';

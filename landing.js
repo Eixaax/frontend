@@ -64,14 +64,18 @@ function openC(){
 function createAcc(){
     loginCont.style.display = 'none';
     RegisterCont.style.display = 'flex';
+    verify.style.display = 'none';
+
 }
 
 function goBack(){
     verify.style.display = 'none';
+    loginCont.style.display = 'none';
     RegisterCont.style.display = 'flex';
 }
 
 function logins(){
     loginCont.style.display = 'flex';
     RegisterCont.style.display = 'none';
+    verify.style.display = 'none';
 }
