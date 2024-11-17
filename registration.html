@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="registration.css">
+    <title>Registration</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Registration Form</h1>
+        <form id="registrationForm">
+            <div class="form-section">
+                <div class="demographic">
+                    <h2>Demographic Information</h2>
+                    <label for="birthday">Birthday:</label>
+                    <input type="date" id="birthday" name="birthday" required>
+                    
+                    <label for="gender">Gender:</label>
+                    <select id="gender" name="gender" required>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Other">Other</option>
+                    </select>
+                    
+                    <label for="height">Height (cm):</label>
+                    <input type="number" id="height" name="height" required>
+                    
+                    <label for="weight">Weight (kg):</label>
+                    <input type="number" id="weight" name="weight" required>
+                    
+                    <label for="ethnicity">Ethnicity:</label>
+                    <input type="text" id="ethnicity" name="ethnicity" required>
+                </div>
+
+                <div class="lifestyle">
+                    <h2>Lifestyle Factors</h2>
+                    <label for="activityLevel">Activity Level:</label>
+                    <select id="activityLevel" name="activityLevel" required>
+                        <option value="Sedentary">Sedentary</option>
+                        <option value="Light">Light</option>
+                        <option value="Moderate">Moderate</option>
+                        <option value="Active">Active</option>
+                    </select>
+                    
+                    <label for="foodPreferences">Food Preferences:</label>
+                    <input type="text" id="foodPreferences" name="foodPreferences" required>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <div class="health-status">
+                    <h2>Health Status</h2>
+                    <label for="medicalConditions">Medical Conditions:</label>
+                    <input type="text" id="medicalConditions" name="medicalConditions">
+                    
+                    <label for="medications">Medications:</label>
+                    <input type="text" id="medications" name="medications">
+                    
+                    <label for="dietaryRestrictions">Dietary Restrictions:</label>
+                    <input type="text" id="dietaryRestrictions" name="dietaryRestrictions">
+                    
+                    <label for="allergies">Allergies:</label>
+                    <input type="text" id="allergies" name="allergies">
+                </div>
+
+                <div class="goals">
+                    <h2>Goals</h2>
+                    <label for="fitnessGoals">Fitness Goals:</label>
+                    <input type="text" id="fitnessGoals" name="fitnessGoals" required>
+                    
+                    <label for="equipmentAccess">Equipment Access:</label>
+                    <input type="text" id="equipmentAccess" name="equipmentAccess">
+                </div>
+            </div>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    <script src="validation.js"></script>
+</body>
+</html>

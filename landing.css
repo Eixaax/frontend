@@ -1069,8 +1069,8 @@ body{
     .notif{
         position: fixed;
         display: none;
-        height: 80px;
-        width: 300px;
+        height: 60px;
+        width: 200px;
         background-color: white;
         bottom: 1em;
         right: 1em;
@@ -1090,7 +1090,7 @@ body{
     .notif i{
         display: flex;
         align-items: center;
-        font-size: 2rem;
+        font-size: 1.5rem;
         color: red;
         margin: 0.5em;
     }
@@ -1101,19 +1101,19 @@ body{
         align-items: start;
         text-align: start;
         justify-content: center;
-        gap: 0.2em;
+        gap: 0.1em;
         width: 100%;
     
     }
     
     .notif .message h1{
         text-align: start;
-        font-size: 1.2rem;
+        font-size: 1rem;
         font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     }
     
     .notif .message p{
-        font-size: 0.8rem;
+        font-size: 0.5rem;
         font-family:'Times New Roman', Times, serif;
         color: rgb(90, 90, 90);
     }
@@ -1237,17 +1237,17 @@ body{
         font-size: 0.7rem;
     }
 
-    .main-cont .right-cont .close-btn{
+    .main-cont .right-cont .close-btn {
         position: relative;
         height: 30px;
         width: 30px;
         font-size: 0.5rem;
-        top: 56.5em;
+        top: 52.5em;
         left: 0.2em;
     }
 
     .main-cont .right-cont .login-cont{
-        height: 60%;
+        height: 400px;
         width: 70%;
         border-radius: 0 0 20px 20px;
     }
@@ -1284,7 +1284,7 @@ body{
     }
 
     .main-cont .right-cont .create-cont{
-        height: 60%;
+        height: 400px;
         width: 70%;
         border-radius: 0 0 20px 20px;
     }
@@ -1321,7 +1321,7 @@ body{
     }
 
     .main-cont .right-cont .verification-cont{
-        height: 60%;
+        height: 400px;
         width: 70%;
         border-radius: 0 0 20px 20px;
     }
@@ -1330,7 +1330,6 @@ body{
     .main-cont  .right-cont .verification-cont form .fill-up{
         height: 30px;
         width: 200px;
-        
     }
 
     .main-cont  .right-cont .verification-cont form .fill-up input{
@@ -1355,6 +1354,3 @@ body{
     
 
 }
-
-
-
