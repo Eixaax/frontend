@@ -58,7 +58,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
         closeBtn.querySelector("i").classList.replace("fa-angles-left","fa-angles-right", );
     };
-
     const openSidebar = () => {
         closeBtn.style.left = "7.5em";
         accInfo.style.display = "";
