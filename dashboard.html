@@ -4,65 +4,178 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Dashboard</title>
 </head>
 <body>
-    <div class="dashboard">
-        <div class="sidebar" id="sidebar">
-            <div class="sidebar-header">Dashboard</div>
-            <div class="sidebar-menu">
-                <a href="#">Profile</a>
-                <a href="#">Settings</a>
-                <a href="#">Logout</a>
+    <div class="main-cont">
+        <div class="side-bar-cont">
+            <div class="side-bar">
+                <div class="close-btn" id="close-btn">
+                    <i class="fa-solid fa-angles-right"></i>
+                </div>
+                <div class="account">
+                    <div class="img-cont">
+                        <img src="wmsulogo.png" alt="">
+                    </div>
+                    <div class="account-info" id="acc-info">
+                        <h1>Username</h1>
+                        <p>student</p>
+                    </div>
+                </div>
+                <div class="menu">
+                    <div class="menu-navs"style="background-color: var(--first-color-light); cursor: none;">
+                        <div class="menu-icon" >
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </div>
+                        <input type="search" class="labels">
+                    </div>
+                    <div class="menu-nav">
+                        <div class="menu-icon">
+                            <i class="fa-solid fa-house"></i>
+                        </div>
+                        <p class="labels">Dashboard</p>
+                    </div>
+                    <div class="menu-nav">
+                        <div class="menu-icon">
+                            <i class="fa-solid fa-chart-simple"></i>
+                        </div>
+                        <p class="labels">Statistics</p>
+                    </div>
+                    <div class="menu-nav">
+                        <div class="menu-icon">
+                            <i class="fa-solid fa-user"></i>
+                        </div>
+                        <p class="labels">Profile</p>
+                    </div>
+                    <div class="menu-nav">
+                        <div class="menu-icon">
+                            <i class="fa-solid fa-gears"></i>
+                        </div>
+                        <p class="labels">Settings</p>
+                    </div>
+                    <div class="menu-nav">
+                        <div class="menu-icon">
+                            <i class="fa-solid fa-circle-info"></i>
+                        </div>
+                        <p class="labels">More</p>
+                    </div>
+                </div>
+                <div class="logout">
+                    <div class="logout-nav" id="logout-btn">
+                        <div class="menu-icon">
+                            <i class="fa-solid fa-right-from-bracket"></i>
+                        </div>
+                        <p class="labels">Logout</p>
+                    </div>
+
+                    <div id="logout-popup" class="popup">
+                        <div class="popup-content">
+                            <h2>Are you sure you want to logout?</h2>
+                            <button id="yes-btn">Yes</button>
+                            <button id="no-btn">No</button>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-nav">
+                        <div class="menu-icon">
+                            <i class="fa-solid fa-house"></i>
+                        </div>
+                        <p class="labels">Dashboard</p>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="main-content">
-            <header class="header">
-                <button class="toggle-btn" id="toggleSidebar">☰</button>
-                <h1>Welcome, User</h1>
-                <div>
-                    <button class="toggle-btn">🔔</button>
-                    <button class="toggle-btn">👤</button>
-                </div>
-            </header>
-            <main class="content">
-                <div class="card-grid">
-                    <div class="card">
-                        <h2>Card 1</h2>
-                        <p>This is some sample content for the dashboard.</p>
+        <div class="header">
+            <img src="wmsulogo.png" alt="">
+            <h1>WMSU WELLNESS</h1>
+        </div>
+        <div class="dashboard">
+            <h1>Dashboard</h1>
+        </div>
+        <div class="statistics">
+            <h1>statistics</h1>
+        </div>
+        <div class="profile">
+            <div class="container">
+                <h1>Registration Form</h1>
+                <form id="registrationForm">
+                    <div class="form-section">
+                        <div class="demographic">
+                            <h2>Demographic Information</h2>
+                            <label for="birthday">Birthday:</label>
+                            <input type="date" id="birthday" name="birthday" required>
+                            
+                            <label for="gender">Gender:</label>
+                            <select id="gender" name="gender" required>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                                <option value="Other">Other</option>
+                            </select>
+                            
+                            <label for="height">Height (cm):</label>
+                            <input type="number" id="height" name="height" required>
+                            
+                            <label for="weight">Weight (kg):</label>
+                            <input type="number" id="weight" name="weight" required>
+                            
+                            <label for="ethnicity">Ethnicity:</label>
+                            <input type="text" id="ethnicity" name="ethnicity" required>
+                        </div>
+        
+                        <div class="lifestyle">
+                            <h2>Lifestyle Factors</h2>
+                            <label for="activityLevel">Activity Level:</label>
+                            <select id="activityLevel" name="activityLevel" required>
+                                <option value="Sedentary">Sedentary</option>
+                                <option value="Light">Light</option>
+                                <option value="Moderate">Moderate</option>
+                                <option value="Active">Active</option>
+                            </select>
+                            
+                            <label for="foodPreferences">Food Preferences:</label>
+                            <input type="text" id="foodPreferences" name="foodPreferences" required>
+                        </div>
                     </div>
-                    <div class="card">
-                        <h2>Card 2</h2>
-                        <p>This is some sample content for the dashboard.</p>
+        
+                    <div class="form-section">
+                        <div class="health-status">
+                            <h2>Health Status</h2>
+                            <label for="medicalConditions">Medical Conditions:</label>
+                            <input type="text" id="medicalConditions" name="medicalConditions">
+                            
+                            <label for="medications">Medications:</label>
+                            <input type="text" id="medications" name="medications">
+                            
+                            <label for="dietaryRestrictions">Dietary Restrictions:</label>
+                            <input type="text" id="dietaryRestrictions" name="dietaryRestrictions">
+                            
+                            <label for="allergies">Allergies:</label>
+                            <input type="text" id="allergies" name="allergies">
+                        </div>
+        
+                        <div class="goals">
+                            <h2>Goals</h2>
+                            <label for="fitnessGoals">Fitness Goals:</label>
+                            <input type="text" id="fitnessGoals" name="fitnessGoals" required>
+                            
+                            <label for="equipmentAccess">Equipment Access:</label>
+                            <input type="text" id="equipmentAccess" name="equipmentAccess">
+                        </div>
                     </div>
-                    <div class="card">
-                        <h2>Card 3</h2>
-                        <p>This is some sample content for the dashboard.</p>
-                    </div>
-                    <div class="card">
-                        <h2>Card 4</h2>
-                        <p>This is some sample content for the dashboard.</p>
-                    </div>
-                    <div class="card">
-                        <h2>Card 5</h2>
-                        <p>This is some sample content for the dashboard.</p>
-                    </div>
-                    <div class="card">
-                        <h2>Card 6</h2>
-                        <p>This is some sample content for the dashboard.</p>
-                    </div>
-                </div>
-            </main>
+        
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+        <div class="settings">
+            <h1>settings</h1>
+        </div>
+        <div class="more">
+            <h1>more</h1>
         </div>
     </div>
-
-    <script>
-        const sidebar = document.getElementById('sidebar');
-        const toggleBtn = document.getElementById('toggleSidebar');
-
-        toggleBtn.addEventListener('click', () => {
-            sidebar.classList.toggle('closed');
-        });
-    </script>
+    
+    <script src="dashboard.js"></script>
 </body>
 </html>
